@@ -1,0 +1,48 @@
+{
+	// 数组(pages)中第一项表示应用启动页（参考：https://uniapp.dcloud.io/collocation/pages）
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/test/index",
+			"style": {
+				"navigationBarTitleText": "框架案例"
+			}
+		},
+		{
+			"path": "pages/test/request",
+			"style": {
+				"navigationBarTitleText": "请求案例"
+			}
+		},
+		{
+			"path": "pages/test/upload",
+			"style": {
+				"navigationBarTitleText": "上传案例"
+			}
+		},
+		{
+			"path": "pages/test/component",
+			"style": {
+				"navigationBarTitleText": "组件（easycom）"
+			}
+		},
+		{
+			"path": "pages/test/system",
+			"style": {
+				"navigationBarTitleText": "便捷配置使用"
+			}
+		}
+	],
+	// 全局配置
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "自用 UniApp 模板",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}

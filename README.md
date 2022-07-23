@@ -4,5 +4,5 @@
 
 	* vue2
 
-* 项目由命令行创建，非 `HBuilderX` 创建，下载后需要执行 `$ npm install` 安装插件才能运行。
+* 项目由命令行创建，非 `HBuilderX` 创建，下载后需执行 `$ npm install` 安装插件，运行指令看 `package.json`。
 
