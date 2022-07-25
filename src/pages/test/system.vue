@@ -22,7 +22,7 @@ export default {
 			// 正常更新 
 			system.update()
 			// 强制更新
-			// system.update({ force: true })
+			// system.update(true)
 		}
 	}
 }
