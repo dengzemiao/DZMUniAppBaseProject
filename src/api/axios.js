@@ -1,3 +1,5 @@
+import Pub from '@/utils/public.js'
+
 // #ifdef H5
 const BaseHost = '/api'
 // #endif
@@ -8,7 +10,7 @@ const BaseHost = 'http://api.video.test.netjoy.com'
 
 // ===================================================== 请求
 
-// 官方请求文档（可查阅传参）https://uniapp.dcloud.io/api/request/request.html
+// 官方请求文档可查阅传参）https://uniapp.dcloud.io/api/request/request.html
 	
 // 请求接口封装（返回 Promise 对象）
 export function axios ({
@@ -32,7 +34,7 @@ export function axios ({
 			data,
 			header: Object.assign({
 				// 默认请求头
-				'X-Token': uni.getStorageSync('token')
+				'X-Token': Pub.ACCESS_TOKEN()
 			}, header),
 			success: (res) => {
 				// 可以在这里进行成功的公共处理
