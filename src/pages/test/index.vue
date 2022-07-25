@@ -22,6 +22,9 @@ export default {
 </script>
 
 <style>
+page {
+	background-color: yellow;
+}
 .content {
 	display: flex;
 	flex-direction: column;

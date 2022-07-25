@@ -44,5 +44,9 @@
 		"navigationBarTitleText": "自用 UniApp 模板",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	// easycom
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
 	}
 }
