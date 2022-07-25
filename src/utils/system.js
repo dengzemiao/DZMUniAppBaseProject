@@ -113,7 +113,7 @@ const system = {
 	// ======================================== 版本更新
 	
 	// 检查版本及是否更新（小程序）
-	update (params = { force: false }) {
+	update (force = false) {
 		
 		// ---------------------------------------- 小程序
 		
@@ -139,9 +139,9 @@ const system = {
 									updateManager.applyUpdate()
 								}
 								// 取消重启 && 强制更新
-								if (res.cancel && params.force) {
+								if (res.cancel && force) {
 									// 重新进入检查
-									this.update(params)
+									this.update(force)
 								}
 							}
 						})
@@ -153,9 +153,9 @@ const system = {
 							content: '新版本已经上线啦~，请您删除当前小程序，重新搜索打开哟~',
 							success: (res) => {
 								// 强制更新
-								if (params.force) {
+								if (force) {
 									// 重新进入检查
-									this.update(params)
+									this.update(force)
 								}
 							}
 						})
