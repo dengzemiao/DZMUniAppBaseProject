@@ -10,12 +10,13 @@
 		<navigator url="/pages/test/system"><button>系统配置封装（system.js）</button></navigator>
 	</view>
 </template>
-
+  
 <script>
+import Pub from '@/utils/public.js'
 export default {
 	onLoad() {
 		// 用于测试的用户 token
-		uni.setStorageSync('token', '4f605c112594fb5a954e40c061c90d9e')
+		Pub.ACCESS_TOKEN('4f605c112594fb5a954e40c061c90d9e')
 	}
 }
 </script>
