@@ -93,7 +93,7 @@ export function uploadFileTask ({
 		name,
 		header: Object.assign({
 			// 默认请求头
-			'X-Token': uni.getStorageSync('token')
+			'X-Token': Pub.ACCESS_TOKEN()
 		}, header),
 		success: (res) => {
 			// 可以在这里进行成功的公共处理
