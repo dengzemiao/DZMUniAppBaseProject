@@ -1,4 +1,4 @@
-import Pub from '@/utils/public.js'
+import Pub from '@/common/public.js'
 
 // #ifdef H5
 const BaseHost = '/api'

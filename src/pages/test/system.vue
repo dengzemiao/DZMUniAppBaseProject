@@ -9,7 +9,7 @@
 
 <script>
 // 导入系统文件
-import system from '@/utils/system.js'
+import system from '@/common/system.js'
 export default {
 	methods: {
 		// 输出系统信息

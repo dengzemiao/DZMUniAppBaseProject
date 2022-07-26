@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App'
 
 // 导入插件配置
-import '@/utils/use.js'
+import '@/common/use.js'
 
 // 阻止 vue 在启动时生成生产提示
 Vue.config.productionTip = false

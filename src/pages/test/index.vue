@@ -12,7 +12,7 @@
 </template>
   
 <script>
-import Pub from '@/utils/public.js'
+import Pub from '@/common/public.js'
 export default {
 	onLoad() {
 		// 用于测试的用户 token
