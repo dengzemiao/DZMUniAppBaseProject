@@ -36,6 +36,12 @@
 			"style": {
 				"navigationBarTitleText": "便捷配置使用"
 			}
+		},
+		{
+			"path": "pages/test/video",
+			"style": {
+				"navigationBarTitleText": "视频案例"
+			}
 		}
 	],
 	// 全局配置

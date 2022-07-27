@@ -8,6 +8,8 @@
 		<navigator url="/pages/test/component"><button>组件案例（easycom）</button></navigator>
 		<!-- 使用 system.js -->
 		<navigator url="/pages/test/system"><button>系统配置封装（system.js）</button></navigator>
+		<!-- 视频案例 -->
+		<navigator url="/pages/test/video"><button>视频案例</button></navigator>
 	</view>
 </template>
   
