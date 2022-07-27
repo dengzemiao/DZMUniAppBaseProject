@@ -8,6 +8,12 @@
 			}
 		},
 		{
+			"path": "pages/index/user",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
 			"path": "pages/test/index",
 			"style": {
 				"navigationBarTitleText": "框架案例"
@@ -50,6 +56,24 @@
 		"navigationBarTitleText": "自用 UniApp 模板",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	// tabBar
+	"tabBar": {
+		"color": "#BFBFBF",
+		"selectedColor": "#3E3E40",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/image/tabbar_0.png",
+			"selectedIconPath": "static/image/tabbar_select_0.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/index/user",
+			"iconPath": "static/image/tabbar_1.png",
+			"selectedIconPath": "static/image/tabbar_select_1.png",
+			"text": "我的"
+		}]
 	},
 	// easycom
 	"easycom": {
