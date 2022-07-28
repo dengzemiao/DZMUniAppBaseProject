@@ -1,7 +1,9 @@
 <template>
 	<view class="content">
+		<!-- 导航栏 -->
+		<navbar title="视频案例"></navbar>
 		<!-- 视频组件 -->
-		<video :src="url" controls></video>
+		<video :src="src" controls></video>
 	</view>
 </template>
 
@@ -10,7 +12,7 @@ export default {
 	data() {
 		return {
 			// 视频地址
-			url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
+			src: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
 			// 视频上下文
 			context: undefined
 		}

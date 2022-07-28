@@ -1,5 +1,7 @@
 <template>
 	<view class="content">
+		<!-- 导航栏 -->
+		<navbar title="我的" :leftIconShow="false"></navbar>
 		<!-- 框架案例 -->
 		<navigator url="/pages/test/index"><button>框架案例</button></navigator>
 	</view>

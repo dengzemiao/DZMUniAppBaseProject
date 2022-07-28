@@ -1,5 +1,7 @@
 <template>
 	<view class="content">
+		<!-- 导航栏 -->
+		<navbar title="便捷配置使用"></navbar>
 		<!-- 系统信息 -->
 		<button @click="touchLog">系统信息</button>
 		<!-- 检查更新 -->
@@ -23,6 +25,9 @@ export default {
 			system.update()
 			// 强制更新
 			// system.update(true)
+			// 输出更新后的系统信息
+			console.log(system)
+			uni.showToast({ title: '更新成功，详情看控制台', icon: 'none' })
 		}
 	}
 }

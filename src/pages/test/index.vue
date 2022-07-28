@@ -1,5 +1,7 @@
 <template>
 	<view class="content">
+		<!-- 导航栏 -->
+		<navbar title="框架案例"></navbar>
 		<!-- 请求案例 -->
 		<navigator url="/pages/test/request"><button>请求案例</button></navigator>
 		<!-- 上传案例 -->

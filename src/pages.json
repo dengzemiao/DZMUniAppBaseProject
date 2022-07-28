@@ -52,6 +52,7 @@
 	],
 	// 全局配置
 	"globalStyle": {
+		"navigationStyle": "custom",
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "自用 UniApp 模板",
 		"navigationBarBackgroundColor": "#F8F8F8",

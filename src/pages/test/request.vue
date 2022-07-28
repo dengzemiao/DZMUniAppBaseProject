@@ -1,5 +1,7 @@
 <template>
 	<view class="content">
+		<!-- 导航栏 -->
+		<navbar title="请求案例"></navbar>
 		<!-- 发起请求 -->
 		<button @click="touchButton" :loading="isLoading">发起请求</button>
 	</view>

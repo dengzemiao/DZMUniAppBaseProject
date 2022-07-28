@@ -1,5 +1,8 @@
 <template>
 	<view class="content">
+		<!-- 导航栏 -->
+		<navbar title="组件（easycom）"></navbar>
+		<!-- easycom 组件 -->
 		<test-easycom></test-easycom>
 	</view>
 </template>
