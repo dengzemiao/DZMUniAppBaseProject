@@ -1,9 +1,7 @@
 <template>
 	<view class="content">
 		<!-- 导航栏 -->
-		<view class="nav-bar">
-			<button size="mini" @click="touchBack">返回</button>
-		</view>
+		<navbar class="nav-bar" title="导航栏自定义（上下拉加载）"></navbar>
 		<!-- 滚动控件（参考：https://uniapp.dcloud.net.cn/component/scroll-view.html） -->
 		<scroll-view
 			class="scroll-view"
@@ -84,16 +82,8 @@ export default {
 	align-items: center;
 	justify-content: center;
 }
-.nav-bar {
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 96rpx;
-	z-index: 10;
-	display: flex;
-	align-items: center;
-	background-color: yellow;
+.nav-bar >>> .u-navbar__content {
+	background-color: yellow !important;
 }
 .scroll-view {
 	margin-top: 96rpx;
