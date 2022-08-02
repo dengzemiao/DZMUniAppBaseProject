@@ -12,6 +12,10 @@
 		<navigator url="/pages/test/system"><button>系统配置封装（system.js）</button></navigator>
 		<!-- 视频案例 -->
 		<navigator url="/pages/test/video"><button>视频案例</button></navigator>
+		<!-- 导航栏（附带上下拉加载） -->
+		<navigator url="/pages/test/navbar"><button>导航栏（上下拉加载）</button></navigator>
+		<!-- 导航栏自定义（附带上下拉加载） -->
+		<navigator url="/pages/test/navbar-custom"><button>导航栏自定义（上下拉加载）</button></navigator>
 	</view>
 </template>
   
