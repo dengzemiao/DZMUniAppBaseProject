@@ -48,6 +48,24 @@
 			"style": {
 				"navigationBarTitleText": "视频案例"
 			}
+		},
+		{
+			"path": "pages/test/navbar",
+			"style": {
+				"navigationBarTitleText": "导航栏（上下拉加载）",
+				// 开始上下拉加载
+				"enablePullDownRefresh": true,
+				// 距离底部多少距离时触发上拉加载
+				"onReachBottomDistance": 0
+			}
+		},
+		{
+			"path": "pages/test/navbar-custom",
+			"style": {
+				"navigationBarTitleText": "导航栏自定义（上下拉加载）",
+				// 自定义导航栏
+				"navigationStyle": "custom"
+			}
 		}
 	],
 	// 全局配置
