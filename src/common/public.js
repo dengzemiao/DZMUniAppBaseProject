@@ -182,7 +182,7 @@ const Pub = {
 
   // ================================= 《 JSON 快捷取值 》
 
-  // 获取指定 key 值
+  // 获取指定 key 值（参考：https://blog.csdn.net/zz00008888/article/details/123236599）
   VALUE (obj, key) {
     // 当前值
     var value = undefined
