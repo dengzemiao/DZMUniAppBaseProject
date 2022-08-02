@@ -1,0 +1,8 @@
+/**
+ * 这里是公共 css 扩展管理，推荐使用 sass 预处理
+ * 安装 Sass:【$ npm i sass -D】【$ npm i sass-loader -D】
+ * 如果使用了 Sass，可以将 common.css 改为 common.scss，并在 uni.scss 或 app.vue 文件中引用
+ */
+.dzm-test {
+	color: red;
+}
