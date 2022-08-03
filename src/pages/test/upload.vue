@@ -1,7 +1,5 @@
 <template>
 	<view class="content">
-		<!-- 导航栏 -->
-		<navbar title="上传案例"></navbar>
 		<!-- 上传文件 -->
 		<button @click="touchButton" :loading="isLoading">上传文件</button>
 	</view>

@@ -1,7 +1,5 @@
 <template>
 	<view class="content">
-		<!-- 导航栏 -->
-		<navbar title="便捷配置使用"></navbar>
 		<!-- 系统信息 -->
 		<button @click="touchLog">系统信息</button>
 		<!-- 检查更新 -->

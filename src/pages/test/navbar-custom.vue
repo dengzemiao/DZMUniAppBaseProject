@@ -86,7 +86,7 @@ export default {
 	background-color: yellow !important;
 }
 .scroll-view {
-	margin-top: 96rpx;
-	height: calc(100vh - 96rpx);
+	margin-top: 140rpx;
+	height: calc(100vh - 140rpx);
 }
 </style>

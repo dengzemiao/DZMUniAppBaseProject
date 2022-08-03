@@ -1,7 +1,5 @@
 <template>
 	<view class="content">
-		<!-- 导航栏 -->
-		<navbar title="视频案例"></navbar>
 		<!-- 视频组件 -->
 		<video :src="src" controls></video>
 	</view>
