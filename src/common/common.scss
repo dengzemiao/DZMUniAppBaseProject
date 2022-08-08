@@ -4,13 +4,27 @@
  * 如果使用了 Sass，可以将 common.css 改为 common.scss，并在 uni.scss 或 app.vue 文件中引用
  */
 
-/* 自定义导航栏：内容区域样式，在没有 tabbar 的页面使用 */
-.page-content {
-	margin-top: var(--top-height);
-	height: calc(100vh - var(--top-height));
+/* nav：导航栏 tab：TabBar，根据当前使用页面情况选择 */
+/* 页面内容区域样式: 有 nav、tab，无自定义 */
+.page-content-1 {
+	/* #ifdef H5 */
+	height: calc(100vh - var(--top-height) - var(--bottom-height));
+	/* #endif */
+	/* #ifndef H5 */
+	height: 100vh;
+	/* #endif */
 }
-/* 自定义导航栏：内容区域样式，在有 tabbar 的页面使用 */
-.page-content-tabbar {
+/* 页面内容区域样式: 有 nav，无 tab，无自定义 */
+.page-content-2 {
+	/* #ifdef H5 */
+	height: calc(100vh - var(--top-height));
+	/* #endif */
+	/* #ifndef H5 */
+	height: 100vh;
+	/* #endif */
+}
+/* 页面内容区域样式: 有 nav、tab，自定义 nav */
+.page-content-3 {
 	margin-top: var(--top-height);
 	/* #ifdef H5 */
 	height: calc(100vh - var(--top-height) - var(--bottom-height));
@@ -18,4 +32,14 @@
 	/* #ifndef H5 */
 	height: calc(100vh - var(--top-height));
 	/* #endif */
+}
+/* 页面内容区域样式: 有 nav，无 tab，自定义 nav */
+.page-content-4 {
+	margin-top: var(--top-height);
+	height: calc(100vh - var(--top-height));
+}
+/* 页面内容区域样式: 有 nav、tab，自定义 nav、tab */
+.page-content-5 {
+	margin-top: var(--top-height);
+	height: calc(100vh - var(--top-height) - var(--bottom-height));
 }

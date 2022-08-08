@@ -4,7 +4,7 @@
 		<navbar class="nav-bar" title="导航栏自定义（上下拉加载）"></navbar>
 		<!-- 滚动控件（参考：https://uniapp.dcloud.net.cn/component/scroll-view.html） -->
 		<scroll-view
-			class="page-content"
+			class="page-content-4"
 			scroll-y="true"
 			:refresher-enabled="isOpenRefresh"
 			:refresher-triggered="triggered"
