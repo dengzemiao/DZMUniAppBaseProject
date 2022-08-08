@@ -5,7 +5,7 @@
  */
 
 /* nav：导航栏 tab：TabBar，根据当前使用页面情况选择 */
-/* 页面内容区域样式: 有 nav、tab，无自定义 */
+/* 页面内容区域样式: 有 nav、tab */
 .page-content-1 {
 	/* #ifdef H5 */
 	height: calc(100vh - var(--top-height) - var(--bottom-height));
@@ -14,7 +14,7 @@
 	height: 100vh;
 	/* #endif */
 }
-/* 页面内容区域样式: 有 nav，无 tab，无自定义 */
+/* 页面内容区域样式: 有 nav，无 tab */
 .page-content-2 {
 	/* #ifdef H5 */
 	height: calc(100vh - var(--top-height));
@@ -23,7 +23,7 @@
 	height: 100vh;
 	/* #endif */
 }
-/* 页面内容区域样式: 有 nav、tab，自定义 nav */
+/* 页面内容区域样式: 有 nav(自定义)、tab */
 .page-content-3 {
 	margin-top: var(--top-height);
 	/* #ifdef H5 */
@@ -33,12 +33,12 @@
 	height: calc(100vh - var(--top-height));
 	/* #endif */
 }
-/* 页面内容区域样式: 有 nav，无 tab，自定义 nav */
+/* 页面内容区域样式: 有 nav(自定义)，无 tab */
 .page-content-4 {
 	margin-top: var(--top-height);
 	height: calc(100vh - var(--top-height));
 }
-/* 页面内容区域样式: 有 nav、tab，自定义 nav、tab */
+/* 页面内容区域样式: 有 nav(自定义)、tab(自定义) */
 .page-content-5 {
 	margin-top: var(--top-height);
 	height: calc(100vh - var(--top-height) - var(--bottom-height));
