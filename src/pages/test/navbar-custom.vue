@@ -4,7 +4,7 @@
 		<navbar class="nav-bar" title="导航栏自定义（上下拉加载）"></navbar>
 		<!-- 滚动控件（参考：https://uniapp.dcloud.net.cn/component/scroll-view.html） -->
 		<scroll-view
-			class="scroll-view"
+			class="page-content"
 			scroll-y="true"
 			:refresher-enabled="isOpenRefresh"
 			:refresher-triggered="triggered"
@@ -86,9 +86,5 @@ export default {
 }
 .nav-bar >>> .u-navbar__content {
 	background-color: yellow !important;
-}
-.scroll-view {
-	margin-top: var(--navigation-height);
-	height: calc(100vh - var(--navigation-height));
 }
 </style>

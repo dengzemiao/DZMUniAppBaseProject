@@ -24,12 +24,14 @@ const system = {
 	windowHeight: 0,
 	// 状态栏高度
 	statusBarHeight: 0,
-	// 导航条高度(不包括状态栏，单纯的导航条高度)
+	// 导航栏高度(不包括状态栏，单纯的导航条高度)
 	navigationBarHeight: 0,
-	// 导航栏高度(包括状态栏，整个导航栏高度)
-	navigationHeight: 0,
 	// 底部 TabBar 菜单栏高度
 	tabBarHeight: 0,
+	// 整个导航高度(状态栏 + 导航栏)
+	topHeight: 0,
+	// 整个底部菜单高度(TabBar + 底部安全区域)
+	bottomHeight: 0,
 	// 胶囊按钮位置（小程序）
 	mbRect: {},
 
@@ -106,10 +108,12 @@ const system = {
 		
 		// ---------------------------------------- 公共收尾处理
 		
-		// 导航栏高度
-		this.navigationHeight = this.navigationBarHeight + this.statusBarHeight
-		// 屏幕总高度 - 导航栏高度 - 页面内容高度 = 0（如果不为 0，说明导航栏高度有偏差）
-		// console.log(this.screenHeight - this.navigationHeight - this.windowHeight)
+		// 整个导航高度(状态栏 + 导航栏)
+		this.topHeight = this.navigationBarHeight + this.statusBarHeight
+		// 屏幕总高度 - 导航高度 - 页面内容高度 = 0（如果不为 0，说明导航栏高度有偏差）
+		// console.log(this.screenHeight - this.topHeight - this.windowHeight)
+		// 整个底部菜单高度(TabBar + 底部安全区域)
+		this.bottomHeight = this.tabBarHeight + this.info.safeAreaInsets.bottom
 	},
 	
 	// ======================================== 版本更新

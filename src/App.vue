@@ -21,16 +21,18 @@ export default {
 			const style = `
 			  --statusbar-height: ${system.statusBarHeight}px;
 				--navigationbar-height: ${system.navigationBarHeight}px;
-				--navigation-height: ${system.navigationHeight}px;
 				--tabbar-height: ${system.tabBarHeight}px;
 				--safe-bottom: ${system.info.safeAreaInsets.bottom}px;
+				--top-height: ${system.topHeight}px;
+				--bottom-height: ${system.bottomHeight}px;
 			`
 			// 自定义 css var 变量如下：
 			// --statusbar-height: 				状态栏高度（系统自带的小程序固定高度为 25px）
 			// --navigationbar-height:		导航栏高度
-			// --navigation-height:				导航高度（状态栏 + 导航栏）
-			// --tabbar-height:						TabBar高度
-			// --safe-bottom:							全面屏TabBar下面多余的安全区域高度
+			// --tabbar-height:						TabBar 高度
+			// --safe-bottom:							全面屏 TabBar 下面多余的安全区域高度
+			// --top-height:							整个导航高度(状态栏 + 导航栏)
+			// --bottom-height:						整个底部菜单高度(TabBar + 底部安全区域)
 			// 系统自带 css var 变量如下：
 			// -–status-bar-height: 			状态栏高度（参考：https://uniapp.dcloud.net.cn/tutorial/syntax-css.html#css-%E5%8F%98%E9%87%8F）
 			// -–window-top: 							内容区域距离顶部的距离
