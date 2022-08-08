@@ -1,3 +1,4 @@
+import Vue from 'vue'
 // 便捷系统配置
 const system = {
 	// 系统信息
@@ -114,6 +115,31 @@ const system = {
 		// console.log(this.screenHeight - this.topHeight - this.windowHeight)
 		// 整个底部菜单高度(TabBar + 底部安全区域)
 		this.bottomHeight = this.tabBarHeight + this.info.safeAreaInsets.bottom
+		
+		// 初始化 css var 变量（可以跟系统的一样直接使用，使用参考：src/pages/test/navbar-custom.vue）
+		// 使用格式：height: var(key);
+		// 使用格式：height: var(key, 默认值可选填);
+		const style = `
+		  --statusbar-height: ${this.statusBarHeight}px;
+			--navigationbar-height: ${this.navigationBarHeight}px;
+			--tabbar-height: ${this.tabBarHeight}px;
+			--safe-bottom: ${this.info.safeAreaInsets.bottom}px;
+			--top-height: ${this.topHeight}px;
+			--bottom-height: ${this.bottomHeight}px;
+		`
+		// 自定义 css var 变量如下：
+		// --statusbar-height: 				状态栏高度（系统自带的小程序固定高度为 25px）
+		// --navigationbar-height:		导航栏高度
+		// --tabbar-height:						TabBar 高度
+		// --safe-bottom:							全面屏 TabBar 下面多余的安全区域高度
+		// --top-height:							整个导航高度(状态栏 + 导航栏)
+		// --bottom-height:						整个底部菜单高度(TabBar + 底部安全区域)
+		// 系统自带 css var 变量如下：
+		// -–status-bar-height: 			状态栏高度（参考：https://uniapp.dcloud.net.cn/tutorial/syntax-css.html#css-%E5%8F%98%E9%87%8F）
+		// -–window-top: 							内容区域距离顶部的距离
+		// -–window-bottom: 					内容区域距离底部的距离
+		console.log('输出 System 信息：', this, style)
+		Vue.prototype.$style = style
 	},
 	
 	// ======================================== 版本更新
