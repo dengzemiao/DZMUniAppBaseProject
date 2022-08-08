@@ -15,11 +15,11 @@ export default {
 	methods: {
 		// 初始化
 		initData () {
-			// 初始化 css var 变量，需要支持 Sass 才可以使用（参考：src/common/common.css）
+			// 初始化 css var 变量（可以跟系统的一样直接使用，使用参考：src/pages/test/navbar-custom.vue）
 			// 使用格式：height: var(key);
 			// 使用格式：height: var(key, 默认值可选填);
 			const style = `
-			  --statusbar-height: ${system.navigationHeight}px;
+			  --statusbar-height: ${system.statusBarHeight}px;
 				--navigationbar-height: ${system.navigationBarHeight}px;
 				--navigation-height: ${system.navigationHeight}px;
 				--tabbar-height: ${system.tabBarHeight}px;

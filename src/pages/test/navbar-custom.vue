@@ -32,7 +32,7 @@ export default {
 	data() {
 		return {
 			// 自定义 CSS 变量
-			style: this.style,
+			style: this.$style,
 			// 是否开启下拉刷新
 			isOpenRefresh: true,
 			// true 开始刷新，false 停止刷新
@@ -89,16 +89,16 @@ export default {
 .nav-bar {
 	position: fixed;
 	left: 0;
-	top: var(--status-bar-height);
+	top: var(--statusbar-height);
 	width: 100%;
-	height: 48px;
+	height: var(--navigationbar-height);
 	z-index: 10;
 	display: flex;
 	align-items: center;
 	background-color: yellow;
 }
 .scroll-view {
-	margin-top: calc(var(--status-bar-height) + 48px);
-	height: calc(100vh - var(--status-bar-height) - 48px);
+	margin-top: var(--navigation-height);
+	height: calc(100vh - var(--navigation-height));
 }
 </style>
