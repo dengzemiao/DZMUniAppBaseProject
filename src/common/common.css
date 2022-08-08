@@ -4,8 +4,18 @@
  * 如果使用了 Sass，可以将 common.css 改为 common.scss，并在 uni.scss 或 app.vue 文件中引用
  */
 
-/* 自定义导航栏：内容区域样式 */
-.container-content {
+/* 自定义导航栏：内容区域样式，在没有 tabbar 的页面使用 */
+.page-content {
 	margin-top: var(--top-height);
+	height: calc(100vh - var(--top-height));
+}
+/* 自定义导航栏：内容区域样式，在有 tabbar 的页面使用 */
+.page-content-tabbar {
+	margin-top: var(--top-height);
+	/* #ifdef H5 */
 	height: calc(100vh - var(--top-height) - var(--bottom-height));
+	/* #endif */
+	/* #ifndef H5 */
+	height: calc(100vh - var(--top-height));
+	/* #endif */
 }

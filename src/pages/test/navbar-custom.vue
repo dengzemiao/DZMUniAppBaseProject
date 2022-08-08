@@ -6,7 +6,7 @@
 		</view>
 		<!-- 滚动控件（参考：https://uniapp.dcloud.net.cn/component/scroll-view.html） -->
 		<scroll-view
-			class="container-content"
+			class="page-content"
 			scroll-y="true"
 			:refresher-enabled="isOpenRefresh"
 			:refresher-triggered="triggered"
