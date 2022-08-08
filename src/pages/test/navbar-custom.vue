@@ -6,7 +6,7 @@
 		</view>
 		<!-- 滚动控件（参考：https://uniapp.dcloud.net.cn/component/scroll-view.html） -->
 		<scroll-view
-			class="scroll-view"
+			class="container-content"
 			scroll-y="true"
 			:refresher-enabled="isOpenRefresh"
 			:refresher-triggered="triggered"
@@ -96,9 +96,5 @@ export default {
 	display: flex;
 	align-items: center;
 	background-color: yellow;
-}
-.scroll-view {
-	margin-top: var(--navigation-height);
-	height: calc(100vh - var(--navigation-height));
 }
 </style>
