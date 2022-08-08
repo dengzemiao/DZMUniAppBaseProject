@@ -41,7 +41,7 @@ const system = {
 		// 默认系统配置（参考：https://uniapp.dcloud.net.cn/api/system/info.html）
 		const info = uni.getSystemInfoSync()
 
-		// ---------------------------------------- 公共
+		// ---------------------------------------- 公共初始处理
 		
 		// 系统信息
 		this.info = info
@@ -67,6 +67,10 @@ const system = {
 		this.windowHeight = info.windowHeight
 		// 状态栏高度
 		this.statusBarHeight = info.statusBarHeight
+		// 导航栏高度
+		this.navigationBarHeight = 44
+		// 底部 TabBar 菜单栏高度
+		this.tabBarHeight = 50
 		
 		// ---------------------------------------- 手机
 		
@@ -74,17 +78,12 @@ const system = {
 		// #ifdef APP-PLUS | MP
 		
 		// iOS
-		if (this.isIOS) {
-			// 导航栏高度
-			this.navigationBarHeight = 44
-		}
+		if (this.isIOS) {}
 		// android
 		if (this.isAndroid) {
 			// 导航栏高度
 			this.navigationBarHeight = 48
 		}
-		// 底部 TabBar 菜单栏高度
-		this.tabBarHeight = 49
 		
 		// #endif
 		
@@ -102,12 +101,15 @@ const system = {
 		this.mbRect = uni.getMenuButtonBoundingClientRect()
 		// 导航条高度（暂不使用）
 		// this.navigationBarHeight = (this.mbRect.top - this.statusBarHeight) * 2 + this.mbRect.height
+		
+		// #endif
+		
+		// ---------------------------------------- 公共收尾处理
+		
 		// 导航栏高度
 		this.navigationHeight = this.navigationBarHeight + this.statusBarHeight
 		// 屏幕总高度 - 导航栏高度 - 页面内容高度 = 0（如果不为 0，说明导航栏高度有偏差）
 		// console.log(this.screenHeight - this.navigationHeight - this.windowHeight)
-		
-		// #endif
 	},
 	
 	// ======================================== 版本更新

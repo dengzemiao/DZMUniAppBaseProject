@@ -1,5 +1,5 @@
 <template>
-	<view class="content">
+	<view class="content" :style="style">
 		<!-- 导航栏 -->
 		<navbar class="nav-bar" title="导航栏自定义（上下拉加载）"></navbar>
 		<!-- 滚动控件（参考：https://uniapp.dcloud.net.cn/component/scroll-view.html） -->
@@ -29,6 +29,7 @@
 export default {
 	data() {
 		return {
+			style: this.style,
 			// 是否开启下拉刷新
 			isOpenRefresh: true,
 			// true 开始刷新，false 停止刷新
@@ -76,17 +77,19 @@ export default {
 </script>
 
 <style>
+.nav-bar >>> .u-navbar__content {
+	background-color: yellow !important;
+}
+</style>
+<style lang="scss">
 .content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 }
-.nav-bar >>> .u-navbar__content {
-	background-color: yellow !important;
-}
 .scroll-view {
-	margin-top: 140rpx;
-	height: calc(100vh - 140rpx);
+	margin-top: var(--navigation-height);
+	height: calc(100vh - var(--navigation-height));
 }
 </style>
