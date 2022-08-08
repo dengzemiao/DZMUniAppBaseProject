@@ -78,16 +78,14 @@ export default {
 </script>
 
 <style>
-.nav-bar >>> .u-navbar__content {
-	background-color: yellow !important;
-}
-</style>
-<style lang="scss">
 .content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+}
+.nav-bar >>> .u-navbar__content {
+	background-color: yellow !important;
 }
 .scroll-view {
 	margin-top: var(--navigation-height);
