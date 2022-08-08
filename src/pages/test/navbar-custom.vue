@@ -31,6 +31,7 @@
 export default {
 	data() {
 		return {
+			// 自定义 CSS 变量
 			style: this.style,
 			// 是否开启下拉刷新
 			isOpenRefresh: true,
