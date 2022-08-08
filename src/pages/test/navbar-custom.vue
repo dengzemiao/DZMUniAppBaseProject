@@ -1,5 +1,5 @@
 <template>
-	<view class="content">
+	<view class="content" :style="style">
 		<!-- 导航栏 -->
 		<view class="nav-bar">
 			<button size="mini" @click="touchBack">返回</button>
@@ -31,6 +31,7 @@
 export default {
 	data() {
 		return {
+			style: this.style,
 			// 是否开启下拉刷新
 			isOpenRefresh: true,
 			// true 开始刷新，false 停止刷新
@@ -87,16 +88,16 @@ export default {
 .nav-bar {
 	position: fixed;
 	left: 0;
-	top: 0;
+	top: var(--status-bar-height);
 	width: 100%;
-	height: 96rpx;
+	height: 48px;
 	z-index: 10;
 	display: flex;
 	align-items: center;
 	background-color: yellow;
 }
 .scroll-view {
-	margin-top: 96rpx;
-	height: calc(100vh - 96rpx);
+	margin-top: calc(var(--status-bar-height) + 48px);
+	height: calc(100vh - var(--status-bar-height) - 48px);
 }
 </style>
