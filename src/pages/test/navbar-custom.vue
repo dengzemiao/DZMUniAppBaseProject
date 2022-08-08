@@ -1,6 +1,6 @@
 <template>
 	<view class="content" :style="style">
-		<!-- 导航栏 -->
+		<!-- 导航栏，自带状态栏高度 -->
 		<navbar class="nav-bar" title="导航栏自定义（上下拉加载）"></navbar>
 		<!-- 滚动控件（参考：https://uniapp.dcloud.net.cn/component/scroll-view.html） -->
 		<scroll-view
