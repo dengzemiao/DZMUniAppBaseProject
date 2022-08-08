@@ -30,7 +30,7 @@ export default {
 	data() {
 		return {
 			// 自定义 CSS 变量
-			style: this.style,
+			style: this.$style,
 			// 是否开启下拉刷新
 			isOpenRefresh: true,
 			// true 开始刷新，false 停止刷新
