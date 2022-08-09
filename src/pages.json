@@ -53,7 +53,7 @@
 			"path": "pages/test/navbar",
 			"style": {
 				"navigationBarTitleText": "导航栏（上下拉加载）",
-				// 开始上下拉加载
+				// 开启下拉加载
 				"enablePullDownRefresh": true,
 				// 距离底部多少距离时触发上拉加载
 				"onReachBottomDistance": 0
