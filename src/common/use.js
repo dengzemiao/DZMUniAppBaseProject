@@ -3,6 +3,9 @@ import Vue from 'vue'
 // 初始化配置文件
 import system from '@/common/system.js'
 
+// 引入公共 css
+import '@/common/common.scss'
+
 // uView
 import uView from 'uview-ui'
 
