@@ -8,32 +8,26 @@
 /* 页面内容区域样式: 有 nav、tab */
 .page-content-1 {
 	width: 100vw;
+	height: 100vh;
 	/* #ifdef H5 */
 	height: calc(100vh - var(--top-height) - var(--bottom-height));
-	/* #endif */
-	/* #ifndef H5 */
-	height: 100vh;
 	/* #endif */
 }
 /* 页面内容区域样式: 有 nav，无 tab */
 .page-content-2 {
 	width: 100vw;
+	height: 100vh;
 	/* #ifdef H5 */
 	height: calc(100vh - var(--top-height));
-	/* #endif */
-	/* #ifndef H5 */
-	height: 100vh;
 	/* #endif */
 }
 /* 页面内容区域样式: 有 nav(自定义)、tab */
 .page-content-3 {
 	margin-top: var(--top-height);
 	width: 100vw;
+	height: calc(100vh - var(--top-height));
 	/* #ifdef H5 */
 	height: calc(100vh - var(--top-height) - var(--bottom-height));
-	/* #endif */
-	/* #ifndef H5 */
-	height: calc(100vh - var(--top-height));
 	/* #endif */
 }
 /* 页面内容区域样式: 有 nav(自定义)，无 tab */
