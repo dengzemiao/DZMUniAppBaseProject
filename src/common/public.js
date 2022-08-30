@@ -2,6 +2,46 @@
 import moment from 'moment'
 
 const Pub = {
+	
+	// ================================= 《 小 写 公 共 方 法 》
+	
+	// 最基础 Toast，固定 icon 为 none
+	toast (text) {
+		uni.showToast({
+			title: text,
+			icon: 'none'
+		})
+	},
+	
+	// ================================= 《 路 由 跳 转 》
+	
+	// 跳转到指定路由地址(下一个页面的 onLoad 函数可得到传递的参数)
+	JUMP_ROUTER (path, query) {
+		// 组装请求参数
+		var queryString = ''
+		if (query) {
+			const keys = Object.keys(query)
+			if (keys.length) {
+				queryString += '?'
+				keys.forEach((item, index) => {
+					if (index === (keys.length - 1)) {
+						queryString += `${item}=${query[item]}`
+					} else {
+						queryString += `${item}=${query[item]}&`
+					}
+				})
+			}
+		}
+		// 跳转
+		uni.navigateTo({
+			url: path + queryString
+		})
+	},
+	
+	// 当前域名
+	DOMAIN_NAME (path) {
+		return window.location.protocol + '//' + window.location.host + (path || '')
+	},
 
   // ================================= 《 正则效验 》
 
@@ -57,6 +97,28 @@ const Pub = {
 
   // ================================= 《 小数点处理 》
 
+	// 计算数值单位
+	NUMBER_CONVERT (value) {
+		// 单位
+		let unit = ''
+		// 数值
+		let num = Number(value || 0)
+		// 校验：先判断大的单位
+		if (num > 100000000) {
+			// 设置单位
+			unit = '亿'
+			// 计算数值
+			num = this.KEEP_NUMBER_DECIMAL({ value: num / 100000000, decimal: 1 })
+		} else if (num > 10000) {
+			// 设置单位
+			unit = '万'
+			// 计算数值
+			num = this.KEEP_NUMBER_DECIMAL({ value: num / 10000, decimal: 1 })
+		}
+		// 返回
+		return num + unit
+	},
+
   // 检查小数点是否超过指定个数 true: 超过 false：没超过
   CHECK_NUMBER_DECIMAL (value, maxLength) {
     // 转为字符串
@@ -77,7 +139,7 @@ const Pub = {
   // isNumber：是否转为 Number，默认 String
   // isComplete：小数点不够时，是否用 0 尾部进行补全
   // completeMax：补全最大数限制，0：按实际补全，也就是小数点差几位补几位
-  KEEP_NUMBER_DECIMAL (value, decimal, isNumber, isComplete, completeMax = 0) {
+  KEEP_NUMBER_DECIMAL ({value, decimal, isNumber, isComplete, completeMax = 0}) {
     // 字符串
     var valueString = `${value || 0}`
     // 保留小数点位数

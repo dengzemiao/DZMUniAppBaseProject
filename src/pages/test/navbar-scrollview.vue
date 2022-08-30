@@ -1,9 +1,7 @@
 <template>
 	<view class="content" :style="style">
 		<!-- 导航栏 -->
-		<view class="nav-bar">
-			<button size="mini" @click="touchBack">返回</button>
-		</view>
+		<com-navbar></com-navbar>
 		<!-- 滚动控件（参考：https://uniapp.dcloud.net.cn/component/scroll-view.html） -->
 		<scroll-view
 			class="page-content-4"
@@ -80,21 +78,4 @@ export default {
 </script>
 
 <style>
-.content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-.nav-bar {
-	position: fixed;
-	left: 0;
-	top: var(--statusbar-height);
-	width: 100%;
-	height: var(--navigationbar-height);
-	z-index: 10;
-	display: flex;
-	align-items: center;
-	background-color: yellow;
-}
 </style>

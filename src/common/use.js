@@ -6,5 +6,6 @@ import system from '@/common/system.js'
 // uView
 // import uView from 'uview-ui'
 
-// 使用 uView
+// 配置与使用
 // Vue.use(uView)
+Vue.prototype.$system = system
