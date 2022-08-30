@@ -2,19 +2,17 @@
 	<view class="content" :style="style">
 		<!-- 导航栏 -->
 		<com-navbar></com-navbar>
-		<!-- 页面内容 -->
-		<view class="page-content-1">
-			<com-mescroll
-				:top="system.topHeight + 'px'"
-				@init="mescrollInit"
-				@up="upCallback"
-				@down="downCallback"
-			>
-				<view v-for="(item, index) in dataSource" :key="index">
-					{{ index }}
-				</view>
-			</com-mescroll>
-		</view>
+		<!-- 页面内容（组件默认为 fixed 布局，所以只需要控制顶部底部间距即可，支持取消 fixed 布局方式） -->
+		<com-mescroll
+			:top="system.topHeight + 'px'"
+			@init="mescrollInit"
+			@up="upCallback"
+			@down="downCallback"
+		>
+			<view v-for="(item, index) in dataSource" :key="index">
+				{{ index }}
+			</view>
+		</com-mescroll>
 	</view>
 </template>
 
