@@ -6,6 +6,7 @@
 		<view class="page-content-1">
 			<com-mescroll
 				:top="system.topHeight + 'px'"
+				@init="mescrollInit"
 				@up="upCallback"
 				@down="downCallback"
 			>
@@ -26,22 +27,32 @@ export default {
 			// 自定义 CSS 变量
 			style: this.$style,
 			// 数据源
-			dataSource: []
+			dataSource: [],
+			// 刷新对象
+			mescroll: undefined
 		}
 	},
 	methods: {
+		// 初始化刷新组件
+		mescrollInit (mescroll) {
+			console.log('-------- 初始化刷新组件 --------', mescroll)
+			// 记录
+			this.mescroll = mescroll
+			// 主动下拉加载刷新
+			this.mescroll.triggerDownScroll()
+		},
 		// 下拉加载
-		downCallback (options, mescroll) {
+		downCallback (mescroll) {
 			console.log('-------- 下拉加载数据 --------', mescroll)
-			this.getData(false, mescroll)
+			this.getData(false)
 		},
 		// 上拉加载
-		upCallback (options, mescroll) {
+		upCallback (mescroll) {
 			console.log('-------- 上拉加载数据 --------', mescroll)
-			this.getData(true, mescroll)
+			this.getData(true)
 		},
 		// 获取数据
-		getData (isMore, mescroll) {
+		getData (isMore) {
 			setTimeout(() => {
 				if (!isMore) {
 					this.dataSource = []
@@ -54,17 +65,15 @@ export default {
 					list.push(num + i)
 				}
 				this.dataSource = this.dataSource.concat(list)
-				if (mescroll) {
-					// mescroll.endSuccess(dataSize, hasNext, systime)
-					// 隐藏下拉刷新和上拉加载的状态, 在联网获取数据成功后调用
-					// dataSize : 当前页获取的数据量(注意是当前页)
-					// hasNext : 是否有下一页数据true/false
-					// systime : 加载第一页数据的服务器时间 (可空)
-					mescroll.endSuccess(count, this.dataSource.length < total)
-					// mescroll.endErr()
-				}
+				// mescroll.endSuccess(dataSize, hasNext, systime)
+				// 隐藏下拉刷新和上拉加载的状态, 在联网获取数据成功后调用
+				// dataSize : 当前页获取的数据量(注意是当前页)
+				// hasNext : 是否有下一页数据true/false
+				// systime : 加载第一页数据的服务器时间 (可空)
+				this.mescroll.endSuccess(count, this.dataSource.length < total)
+				// this.mescroll.endErr()
 				console.log(this.dataSource)
-				console.log('-------- 加载结束 --------', mescroll)
+				console.log('-------- 加载结束 --------', this.mescroll)
 			}, 3000)
 		}
 	}

@@ -60,18 +60,26 @@ export default {
 			}
 		}
 	},
-	onReady () {
-		// 主动下拉加载刷新
-		this.mescroll.triggerDownScroll()
+	mounted () {
+		// 初始化
+		this.init()
 	},
+	// onReady () {
+	// 	// 初始化
+	// 	this.init()
+	// },
 	methods: {
+		// 初始化
+		init () {
+			this.$emit('init', this.mescroll)
+		},
 		// 下拉加载
-		downCallback (options) {
-			this.$emit('down', options, this.mescroll)
+		downCallback (mescroll) {
+			this.$emit('down', mescroll)
 		},
 		// 上拉加载
-		upCallback (options) {
-			this.$emit('up', options, this.mescroll)
+		upCallback (mescroll) {
+			this.$emit('up', mescroll)
 		}
 	}
 }
