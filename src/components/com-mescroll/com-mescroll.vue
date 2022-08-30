@@ -38,7 +38,7 @@ export default {
 		// bottom 的偏移量是否加上底部安全区的距离
 		safearea: {
 			type: Boolean,
-			default: () => true
+			default: () => false
 		}
 	},
 	// 使用 mixin
