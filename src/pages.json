@@ -52,7 +52,7 @@
 		{
 			"path": "pages/test/navbar",
 			"style": {
-				"navigationBarTitleText": "导航栏（上下拉加载）",
+				"navigationBarTitleText": "系统导航栏（上下拉加载）",
 				// 开启下拉加载
 				"enablePullDownRefresh": true,
 				// 距离底部多少距离时触发上拉加载
@@ -60,9 +60,17 @@
 			}
 		},
 		{
-			"path": "pages/test/navbar-custom",
+			"path": "pages/test/navbar-scrollview",
 			"style": {
-				"navigationBarTitleText": "导航栏自定义（上下拉加载）",
+				"navigationBarTitleText": "自定义导航栏（上下拉加载 scrollview）",
+				// 自定义导航栏
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/test/navbar-mescroll",
+			"style": {
+				"navigationBarTitleText": "自定义导航栏（上下拉加载 mescroll 插件）",
 				// 自定义导航栏
 				"navigationStyle": "custom"
 			}

@@ -13,8 +13,12 @@ const system = {
 	isMac: false,
 	// 是否为 Linux
 	isLinux: false,
-	// 设备像素比 (px 与 rpx 的转换比例, 公式：px * pixelRatio = rpx)
+	// 设备像素比（计算的，推荐）(px 与 rpx 的转换比例, 公式：px * pixelRatio = rpx)
 	pixelRatio: 0,
+	// 设备像素比（固定的）
+	pixelRatioFixed: 0,
+	// 设备像素比（系统的）
+	pixelRatioSystem: 0,
 	// 屏幕宽度（屏幕总宽度）
 	screenWidth: 0,
 	// 屏幕高度（屏幕总高度，包含状态栏、导航栏、页面内容、底部Tabbar）
@@ -59,7 +63,9 @@ const system = {
 		// 是否为 Linux
 		this.isLinux = info.osName === 'linux'
 		// 设备像素比
-		this.pixelRatio = info.pixelRatio
+		this.pixelRatio = 750 / info.windowWidth
+		this.pixelRatioFixed = 2
+		this.pixelRatioSystem = info.pixelRatio
 		// 屏幕宽度
 		this.screenWidth = info.screenWidth
 		// 屏幕高度
@@ -138,8 +144,9 @@ const system = {
 		// -–status-bar-height: 			状态栏高度（参考：https://uniapp.dcloud.net.cn/tutorial/syntax-css.html#css-%E5%8F%98%E9%87%8F）
 		// -–window-top: 							内容区域距离顶部的距离
 		// -–window-bottom: 					内容区域距离底部的距离
-		console.log('输出 System 信息：', this, style)
 		Vue.prototype.$style = style
+		// 输出
+		console.log('输出 System 信息：', this, style)
 	},
 	
 	// ======================================== 版本更新

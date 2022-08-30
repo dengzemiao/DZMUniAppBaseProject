@@ -16,14 +16,51 @@ if [[ -z $msg ]];then
 fi
 # 分支列表
 bs=$(git branch -a)
-# 移除偏移分支(不需要可删除)
-fs=$(ls)
-# 是否存在移除偏移脚本
-if [[ "$fs" =~ "gitdeloffset.sh" ]];then
-  sh gitdeloffset.sh "$cb"
-  sh gitdeloffset.sh "$tb"
-fi
 # Git
+# 是否有本地保存代码
+isStash=0
+# 是否有必须要提交的代码（解决了冲突需要提交代码）
+isNeeds=0
+# 是否有当前远程分支
+isRemote=0
+if [[ "$bs" =~ "origin/$cb" ]]; then
+  isRemote=1
+fi
+if [[ $isRemote -eq 1 ]];then
+  # 暂存代码
+  stashmsg=$(git stash)
+  if [[ "$stashmsg" =~ "保存工作目录和索引状态" || "$stashmsg" =~ "Saved working directory and index state" ]]; then
+    isStash=1
+  fi
+  if [[ "$stashmsg" =~ "needs merge" ]]; then
+    isNeeds=1
+  fi
+  # 有暂存代码
+  if [[ $isStash -eq 1 && $isNeeds -eq 0 ]]; then
+    if [ $isLog -eq 1 ];then
+      echo "\033[1;32m------------------------------ git stash \033[0m"
+    fi
+    echo "$stashmsg"
+    # 拉取当前分支
+    if [ $isLog -eq 1 ];then
+      echo "\033[1;32m------------------------------ git pull origin "$cb" \033[0m"
+    fi
+    git pull origin "$cb"
+    if [ $? -ne 0 ];then
+      echo "\033[1;41m============================== 拉取远程分支 $cb 错误 \033[0m"
+      exit $code
+    fi
+    # 提取合并暂存的开发内容
+    if [ $isLog -eq 1 ];then
+      echo "\033[1;32m------------------------------ git stash pop \033[0m"
+    fi
+    git stash pop
+    if [ $? -ne 0 ];then
+      echo "\033[1;41m============================== 本地与远程分支 $cb 合并错误 \033[0m"
+      exit $code
+    fi
+  fi
+fi
 if [ $isLog -eq 1 ];then
   echo "\033[1;32m------------------------------ git add . \033[0m"
 fi
@@ -33,7 +70,7 @@ if [ $isLog -eq 1 ];then
 fi
 git commit -m "$msg"
 # 拉取当前分支
-if [[ "$bs" =~ "origin/$cb" ]];then
+if [[ $isRemote -eq 1 && $isStash -eq 0 && $isNeeds -eq 0 ]];then
   if [ $isLog -eq 1 ];then
     echo "\033[1;32m------------------------------ git pull origin "$cb" \033[0m"
   fi
