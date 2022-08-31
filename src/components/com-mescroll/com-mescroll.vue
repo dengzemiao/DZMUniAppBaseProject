@@ -4,7 +4,11 @@
 		:fixed="fixed"
 		:up="upOption"
 		:down="downOption"
+<<<<<<< Updated upstream
 		:top="top === -1 ? system.topHeight + 'px' : top"
+=======
+		:top="top"
+>>>>>>> Stashed changes
 		:bottom="bottom"
 		:safearea="safearea"
 		@init="mescrollInit"
