@@ -50,6 +50,9 @@ export default {
 		getData (isMore) {
 			setTimeout(() => {
 				if (!isMore) {
+					// 重置页码（也可以记录页码，否者在多拉几次后，框架内页码不正确会导致错乱）
+					this.mescroll.setPageNum(1)
+					// 清空数据
 					this.dataSource = []
 				}
 				const count = 50
