@@ -5,6 +5,7 @@
 		:up="upOption"
 		:down="downOption"
 		:top="top"
+		:bottom="bottom"
 		:safearea="safearea"
 		@init="mescrollInit"
 		@up="upCallback"
@@ -52,7 +53,10 @@ export default {
 			// 上拉加载配置
 			upOption: {
 				auto: false,
-				textNoMore: '- 没有更多数据了 -'
+				textNoMore: '- 没有更多数据了 -',
+				page: { size: 1 },
+				noMoreSize: 1,
+				empty: { use: false }
 			},
 			// 下拉刷新配置
 			downOption: {
