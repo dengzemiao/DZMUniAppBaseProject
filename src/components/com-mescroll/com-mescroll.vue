@@ -4,7 +4,7 @@
 		:fixed="fixed"
 		:up="upOption"
 		:down="downOption"
-		:top="top"
+		:top="top === -1 ? system.topHeight + 'px' : top"
 		:bottom="bottom"
 		:safearea="safearea"
 		@init="mescrollInit"
@@ -27,9 +27,10 @@ export default {
 			default: () => true
 		},
 		// 下拉刷新区域往下偏移的距离(支持 "100rpx"、"100px"、"100%" 格式，默认 rpx)
+		// -1：自适应顶部导航栏 + 状态栏高度，非 -1 则为自定义高度
 		top: {
 			type: Number | String,
-			default: 0
+			default: -1
 		},
 		// 上拉刷新区域往下偏移的距离(支持 "100rpx"、"100px"、"100%" 格式，默认 rpx)
 		bottom: {
@@ -50,6 +51,8 @@ export default {
 	},
 	data() {
 		return {
+			// 系统信息
+			system: this.$system,
 			// 上拉加载配置
 			upOption: {
 				auto: false,
