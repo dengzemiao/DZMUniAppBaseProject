@@ -4,7 +4,6 @@
 		<com-navbar></com-navbar>
 		<!-- 页面内容（组件默认为 fixed 布局，所以只需要控制顶部底部间距即可，支持取消 fixed 布局方式） -->
 		<com-mescroll
-			:top="system.topHeight + 'px'"
 			@init="mescrollInit"
 			@up="upCallback"
 			@down="downCallback"
@@ -20,8 +19,6 @@
 export default {
 	data() {
 		return {
-			// 系统信息
-			system: this.$system,
 			// 自定义 CSS 变量
 			style: this.$style,
 			// 数据源
