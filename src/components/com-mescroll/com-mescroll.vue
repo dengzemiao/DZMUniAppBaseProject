@@ -7,7 +7,7 @@
 		:top="top === -1 ? system.topHeight + 'px' : top"
 		:bottom="bottom"
 		:safearea="safearea"
-		@init="mescrollInit"
+		@init="init"
 		@up="upCallback"
 		@down="downCallback"
 	>
@@ -67,17 +67,10 @@ export default {
 			}
 		}
 	},
-	mounted () {
-		// 初始化
-		this.init()
-	},
-	// onReady () {
-	// 	// 初始化
-	// 	this.init()
-	// },
 	methods: {
 		// 初始化
-		init () {
+		init (mescroll) {
+			this.mescrollInit(mescroll)
 			this.$emit('init', this.mescroll)
 		},
 		// 下拉加载
