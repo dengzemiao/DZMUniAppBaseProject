@@ -3,6 +3,8 @@ import Vue from 'vue'
 const system = {
 	// 系统信息
 	info: {},
+	// 是否为测试环境
+	isDebug: !(process.env.NODE_ENV === 'production'),
 	// 是否为 iOS
 	isIOS: false,
 	// 是否为 Android
