@@ -17,7 +17,7 @@
 
 <script>
 export default {
-	data() {
+	data () {
 		return {
 			// 自定义 CSS 变量
 			style: this.$style,

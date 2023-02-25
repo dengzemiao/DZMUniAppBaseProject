@@ -7,7 +7,7 @@
 
 <script>
 export default {
-	data() {
+	data () {
 		return {
 			// 视频地址
 			url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',

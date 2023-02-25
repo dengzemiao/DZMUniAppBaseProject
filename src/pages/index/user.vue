@@ -7,12 +7,12 @@
 
 <script>
 export default {
-	data() {
+	data () {
 		return {
 			title: 'Hello World!'
 		}
 	},
-	onLoad() {
+	onLoad () {
 	},
 	methods: {
 	}

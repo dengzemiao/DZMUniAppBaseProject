@@ -9,7 +9,7 @@
 <script>
 export default {
 	// 上下拉加载
-	onLoad: function (options) {
+	onLoad (options) {
 		// 开始下拉加载
 		uni.startPullDownRefresh()
 	},
