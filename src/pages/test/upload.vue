@@ -9,7 +9,7 @@
 // 上传接口
 import { uploadFile } from '@/api/axios.js'
 export default {
-	data() {
+	data () {
 		return {
 			isLoading: false
 		}

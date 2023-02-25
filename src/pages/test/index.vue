@@ -22,7 +22,7 @@
 <script>
 import Pub from '@/common/public.js'
 export default {
-	onLoad() {
+	onLoad () {
 		// 用于测试的用户 token
 		Pub.ACCESS_TOKEN('4f605c112594fb5a954e40c061c90d9e')
 	}

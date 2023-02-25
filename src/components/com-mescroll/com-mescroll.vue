@@ -49,7 +49,7 @@ export default {
 	components: {
 		MescrollUni
 	},
-	data() {
+	data () {
 		return {
 			// 系统信息
 			system: this.$system,

@@ -9,7 +9,7 @@
 // 请求接口
 import { getUserInfo } from '@/api/request.js'
 export default {
-	data() {
+	data () {
 		return {
 			isLoading: false
 		}

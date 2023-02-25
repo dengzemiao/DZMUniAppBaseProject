@@ -1,16 +1,16 @@
 <template>
 	<view class="content">
 		<!-- 视频组件 -->
-		<video :src="src" controls></video>
+		<video :src="url" controls></video>
 	</view>
 </template>
 
 <script>
 export default {
-	data() {
+	data () {
 		return {
 			// 视频地址
-			src: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
+			url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
 			// 视频上下文
 			context: undefined
 		}
