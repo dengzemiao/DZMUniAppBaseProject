@@ -1,20 +1,49 @@
 <template>
 	<view class="content">
 		<!-- 框架案例 -->
+		<u-button type="primary" text="确定"></u-button>
+    <u-tabs :list="list1"></u-tabs>
+		<u-navbar
+			title="个人中心"
+			:autoBack="true"
+		>
+		</u-navbar>
 		<navigator url="/pages/test/index"><button>框架案例</button></navigator>
 	</view>
 </template>
 
 <script>
 export default {
-	data () {
+	data() {
 		return {
-			title: 'Hello World!'
+			title: 'Hello World!',
+			list1: [{
+					name: '关注',
+			}, {
+					name: '推荐',
+			}, {
+					name: '电影'
+			}, {
+					name: '科技'
+			}, {
+					name: '音乐'
+			}, {
+					name: '美食'
+			}, {
+					name: '文化'
+			}, {
+					name: '财经'
+			}, {
+					name: '手工'
+			}]
+		}
+	},
+	methods: {
+		click(item) {
+				console.log('item', item);
 		}
 	},
 	onLoad () {
-	},
-	methods: {
 	}
 }
 </script>

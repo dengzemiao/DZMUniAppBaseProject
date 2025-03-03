@@ -1,5 +1,5 @@
 <template>
-	<mescroll-uni
+	<com-messcroll-uni
 		ref="mescrollRef"
 		:fixed="fixed"
 		:up="upOption"
@@ -7,17 +7,19 @@
 		:top="top === -1 ? system.topHeight + 'px' : top"
 		:bottom="bottom"
 		:safearea="safearea"
+		:bottombar="bottombar"
+		:cfixedtop="cfixedtop"
 		@init="init"
 		@up="upCallback"
 		@down="downCallback"
+		@scroll="scrollCallback"
 	>
 		<slot></slot>
-	</mescroll-uni>
+	</com-messcroll-uni>
 </template>
 
 <script>
-import MescrollUni from "mescroll-uni/mescroll-uni.vue"
-import MescrollMixin from "mescroll-uni/mescroll-mixins.js"
+import MescrollMixin from "../com-messcroll-uni/mescroll-mixins.js"
 export default {
 	// 参考文档：http://www.mescroll.com/uni.html#begin
 	props: {
@@ -41,15 +43,21 @@ export default {
 		safearea: {
 			type: Boolean,
 			default: () => false
+		},
+		// 是否清空顶部间距(仅在 H5 端的生效)
+		cfixedtop: {
+			type: Boolean,
+			default: () => false
+		},
+		// 底部是否偏移 TabBar 的高度(仅在 H5 端生效)
+		bottombar: {
+			type: Boolean,
+			default: () => false
 		}
 	},
 	// 使用 mixin
 	mixins: [MescrollMixin],
-	// 注册组件
-	components: {
-		MescrollUni
-	},
-	data () {
+	data() {
 		return {
 			// 系统信息
 			system: this.$system,
@@ -57,6 +65,7 @@ export default {
 			upOption: {
 				auto: false,
 				textNoMore: '- 没有更多数据了 -',
+				textColor: 'rgba(0, 0, 0, 0.2)',
 				page: { size: 1 },
 				noMoreSize: 1,
 				empty: { use: false }
@@ -70,16 +79,23 @@ export default {
 	methods: {
 		// 初始化
 		init (mescroll) {
-			this.mescrollInit(mescroll)
-			this.$emit('init', this.mescroll)
+			console.log(1111, mescroll);
+			// this.mescrollInit(mescroll)
+			this.$emit('init', mescroll)
 		},
 		// 下拉加载
 		downCallback (mescroll) {
+			console.log(2222, mescroll);
 			this.$emit('down', mescroll)
 		},
 		// 上拉加载
 		upCallback (mescroll) {
+			console.log(3333, mescroll);
 			this.$emit('up', mescroll)
+		},
+		// 滚动监听
+		scrollCallback (e) {
+			this.$emit('scroll', e)
 		}
 	}
 }
