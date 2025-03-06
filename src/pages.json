@@ -20,43 +20,43 @@
 			}
 		},
 		{
-			"path": "pages/test/index",
+			"path": "pages/case/index",
 			"style": {
 				"navigationBarTitleText": "框架案例"
 			}
 		},
 		{
-			"path": "pages/test/request",
+			"path": "pages/case/request",
 			"style": {
 				"navigationBarTitleText": "请求案例"
 			}
 		},
 		{
-			"path": "pages/test/upload",
+			"path": "pages/case/upload",
 			"style": {
 				"navigationBarTitleText": "上传案例"
 			}
 		},
 		{
-			"path": "pages/test/component",
+			"path": "pages/case/component",
 			"style": {
 				"navigationBarTitleText": "组件（easycom）"
 			}
 		},
 		{
-			"path": "pages/test/system",
+			"path": "pages/case/system",
 			"style": {
 				"navigationBarTitleText": "便捷配置使用"
 			}
 		},
 		{
-			"path": "pages/test/video",
+			"path": "pages/case/video",
 			"style": {
 				"navigationBarTitleText": "视频案例"
 			}
 		},
 		{
-			"path": "pages/test/navbar",
+			"path": "pages/case/navbar",
 			"style": {
 				"navigationBarTitleText": "系统导航栏（上下拉加载）",
 				// 开启下拉加载
@@ -66,7 +66,7 @@
 			}
 		},
 		{
-			"path": "pages/test/navbar-scrollview",
+			"path": "pages/case/navbar-scrollview",
 			"style": {
 				"navigationBarTitleText": "自定义导航栏（上下拉加载 scrollview）",
 				// 自定义导航栏
@@ -74,7 +74,7 @@
 			}
 		},
 		{
-			"path": "pages/test/navbar-mescroll",
+			"path": "pages/case/navbar-mescroll",
 			"style": {
 				"navigationBarTitleText": "自定义导航栏（上下拉加载 mescroll 插件）",
 				// 自定义导航栏
