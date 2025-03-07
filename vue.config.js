@@ -1,4 +1,5 @@
 module.exports = {
+  transpileDependencies:['@dcloudio/uni-ui'],
   devServer: {
 		disableHostCheck: true,
     proxy: {

@@ -66,6 +66,7 @@
     "@dcloudio/uni-quickapp-native": "^2.0.1-34920220630001",
     "@dcloudio/uni-quickapp-webview": "^2.0.1-34920220630001",
     "@dcloudio/uni-stat": "^2.0.1-34920220630001",
+    "@dcloudio/uni-ui": "^1.5.7",
     "@vue/shared": "^3.0.0",
     "core-js": "^3.6.5",
     "flyio": "^0.6.2",
@@ -96,6 +97,8 @@
     "mini-types": "*",
     "miniprogram-api-typings": "*",
     "postcss-comment": "^2.0.0",
+    "sass": "~1.54.0",
+    "sass-loader": "~10.3.1",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [
