@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
 		<!-- 框架案例 -->
-		<navigator url="/pages/test/index"><button>框架案例</button></navigator>
+		<navigator url="/pages/case/index"><button>框架案例</button></navigator>
 	</view>
 </template>
 
