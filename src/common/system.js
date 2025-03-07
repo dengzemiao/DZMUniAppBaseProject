@@ -124,7 +124,7 @@ const system = {
 		// 整个底部菜单高度(TabBar + 底部安全区域)
 		this.bottomHeight = this.tabBarHeight + this.info.safeAreaInsets.bottom
 		
-		// 初始化 css var 变量（可以跟系统的一样直接使用，使用参考：src/pages/test/navbar-custom.vue）
+		// 初始化 css var 变量（可以跟系统的一样直接使用，使用参考：src/pages/case/navbar-custom.vue）
 		// 使用格式：height: var(key);
 		// 使用格式：height: var(key, 默认值可选填);
 		const style = `
