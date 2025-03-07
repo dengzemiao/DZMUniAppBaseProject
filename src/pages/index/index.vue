@@ -8,7 +8,7 @@
 			:autoBack="true"
 		>
 		</u-navbar>
-		<navigator url="/pages/test/index"><button>框架案例</button></navigator>
+		<navigator url="/pages/case/index"><button>框架案例</button></navigator>
 	</view>
 </template>
 
